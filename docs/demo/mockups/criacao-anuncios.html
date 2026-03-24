@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kraus E-commerce - Criacao de Anuncios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .chat-container { height: 350px; }
+        .typing-indicator span {
+            animation: typing 1.4s infinite;
+            animation-fill-mode: both;
+        }
+        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes typing {
+            0% { opacity: 0.2; }
+            20% { opacity: 1; }
+            100% { opacity: 0.2; }
+        }
+        .generating {
+            background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+        @keyframes shimmer {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 px-6 py-4">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <h1 class="text-xl font-bold text-gray-900">Kraus E-commerce</h1>
+                <span class="bg-orange-100 text-orange-800 text-xs font-medium px-2.5 py-0.5 rounded">Criacao de Anuncios</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-medium">RK</div>
+                    <span class="text-sm text-gray-700">Renan Kraus</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-white border-r border-gray-200 min-h-screen p-4">
+            <nav class="space-y-2">
+                <a href="dashboard-financeiro.html" class="flex items-center gap-3 px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    Financeiro
+                </a>
+                <a href="sistema-estoque.html" class="flex items-center gap-3 px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                    Estoque
+                </a>
+                <a href="criacao-anuncios.html" class="flex items-center gap-3 px-4 py-2 bg-orange-50 text-orange-700 rounded-lg font-medium">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path></svg>
+                    Anuncios
+                </a>
+                <a href="atendimento.html" class="flex items-center gap-3 px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                    Atendimento
+                </a>
+            </nav>
+
+            <!-- Marketplaces -->
+            <div class="mt-8">
+                <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Marketplaces</h3>
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2 px-2 py-1.5 rounded bg-yellow-50">
+                        <div class="w-6 h-6 bg-yellow-400 rounded flex items-center justify-center text-xs font-bold text-yellow-900">ML</div>
+                        <span class="text-sm text-gray-700">Mercado Livre</span>
+                        <span class="ml-auto text-xs text-green-600">Conectado</span>
+                    </div>
+                    <div class="flex items-center gap-2 px-2 py-1.5 rounded bg-orange-50">
+                        <div class="w-6 h-6 bg-orange-500 rounded flex items-center justify-center text-xs font-bold text-white">S</div>
+                        <span class="text-sm text-gray-700">Shopee</span>
+                        <span class="ml-auto text-xs text-green-600">Conectado</span>
+                    </div>
+                    <div class="flex items-center gap-2 px-2 py-1.5 rounded">
+                        <div class="w-6 h-6 bg-black rounded flex items-center justify-center text-xs font-bold text-white">TT</div>
+                        <span class="text-sm text-gray-700">TikTok Shop</span>
+                        <span class="ml-auto text-xs text-gray-400">Em breve</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="mt-8">
+                <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Este Mes</h3>
+                <div class="space-y-3">
+                    <div class="bg-gray-50 rounded-lg p-3">
+                        <p class="text-2xl font-bold text-gray-900">47</p>
+                        <p class="text-xs text-gray-500">Anuncios criados</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-lg p-3">
+                        <p class="text-2xl font-bold text-green-600">R$ 2,40</p>
+                        <p class="text-xs text-gray-500">Custo medio por anuncio</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-6">
+            <!-- Fluxo de Criacao -->
+            <div class="bg-white rounded-xl border border-gray-200 p-6 mb-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-lg font-semibold text-gray-900">Criar Novo Anuncio</h2>
+                    <div class="flex items-center gap-2">
+                        <span class="text-sm text-gray-500">Modo:</span>
+                        <select class="bg-gray-50 border border-gray-300 rounded-lg px-3 py-1.5 text-sm">
+                            <option>Automatico (IA)</option>
+                            <option>Manual</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Steps -->
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 bg-orange-600 rounded-full flex items-center justify-center text-white text-sm font-medium">1</div>
+                        <span class="text-sm font-medium text-gray-900">Produto</span>
+                    </div>
+                    <div class="flex-1 h-0.5 bg-orange-600"></div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 bg-orange-600 rounded-full flex items-center justify-center text-white text-sm font-medium">2</div>
+                        <span class="text-sm font-medium text-gray-900">Gerar</span>
+                    </div>
+                    <div class="flex-1 h-0.5 bg-gray-200"></div>
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 text-sm font-medium">3</div>
+                        <span class="text-sm text-gray-500">Publicar</span>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-6">
+                    <!-- Produto Selecionado -->
+                    <div>
+                        <h3 class="text-sm font-medium text-gray-700 mb-3">Produto do Estoque</h3>
+                        <div class="border border-gray-200 rounded-xl p-4 bg-gray-50">
+                            <div class="flex gap-4">
+                                <img src="https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=200" class="w-24 h-24 rounded-lg object-cover">
+                                <div class="flex-1">
+                                    <p class="font-semibold text-gray-900">F-14 Tomcat Miniatura 1:72</p>
+                                    <p class="text-sm text-gray-500">SKU: MIN001</p>
+                                    <div class="mt-2 flex gap-4">
+                                        <div>
+                                            <p class="text-xs text-gray-500">Custo</p>
+                                            <p class="font-medium text-gray-900">R$ 65,00</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-gray-500">Preco Sugerido</p>
+                                            <p class="font-medium text-green-600">R$ 159,00</p>
+                                        </div>
+                                        <div>
+                                            <p class="text-xs text-gray-500">Margem</p>
+                                            <p class="font-medium text-blue-600">59%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Configuracoes -->
+                        <div class="mt-4 space-y-4">
+                            <div>
+                                <label class="text-sm font-medium text-gray-700">Preco de Venda</label>
+                                <div class="flex gap-2 mt-1">
+                                    <input type="text" value="R$ 159,00" class="flex-1 border border-gray-300 rounded-lg px-4 py-2 text-sm">
+                                    <button class="px-3 py-2 bg-gray-100 rounded-lg text-sm text-gray-600 hover:bg-gray-200">Auto</button>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="text-sm font-medium text-gray-700">Marketplaces</label>
+                                <div class="flex gap-2 mt-2">
+                                    <label class="flex items-center gap-2 bg-yellow-50 px-3 py-2 rounded-lg cursor-pointer border border-yellow-200">
+                                        <input type="checkbox" checked class="rounded text-yellow-600">
+                                        <span class="text-sm">Mercado Livre</span>
+                                    </label>
+                                    <label class="flex items-center gap-2 bg-orange-50 px-3 py-2 rounded-lg cursor-pointer border border-orange-200">
+                                        <input type="checkbox" checked class="rounded text-orange-600">
+                                        <span class="text-sm">Shopee</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Preview Anuncio -->
+                    <div>
+                        <h3 class="text-sm font-medium text-gray-700 mb-3">Preview do Anuncio</h3>
+                        <div class="border border-gray-200 rounded-xl p-4 bg-white">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="bg-green-100 text-green-700 text-xs px-2 py-0.5 rounded">Gerado por IA</span>
+                                <button class="text-xs text-blue-600 hover:text-blue-800">Editar</button>
+                            </div>
+                            <h4 class="font-semibold text-gray-900 text-lg">Miniatura F-14 Tomcat 1:72 - Aviacao Militar - Metal Diecast Premium</h4>
+                            <p class="text-sm text-gray-600 mt-2 leading-relaxed">
+                                Miniatura de alta qualidade do iconicoF-14 Tomcat, famoso caca da Marinha dos EUA. Fabricada em metal diecast com detalhes precisos. Escala 1:72. Perfeita para colecionadores e fas de aviacao militar. Acompanha base de exposicao.
+                            </p>
+                            <div class="mt-4 flex items-baseline gap-2">
+                                <span class="text-2xl font-bold text-gray-900">R$ 159,00</span>
+                                <span class="text-sm text-gray-500 line-through">R$ 199,00</span>
+                                <span class="text-sm text-green-600">20% OFF</span>
+                            </div>
+                            <div class="mt-3 flex items-center gap-4 text-sm text-gray-500">
+                                <span class="flex items-center gap-1">
+                                    <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+                                    Frete Gratis
+                                </span>
+                                <span>Estoque: 55 un.</span>
+                            </div>
+                        </div>
+
+                        <button onclick="generateImages()" class="mt-4 w-full bg-orange-600 text-white py-3 rounded-lg font-medium hover:bg-orange-700 flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            Gerar Imagens com IA
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Imagens Geradas -->
+            <div class="grid grid-cols-3 gap-6">
+                <div class="col-span-2 bg-white rounded-xl border border-gray-200 p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-lg font-semibold text-gray-900">Imagens Geradas</h2>
+                        <div class="flex items-center gap-2">
+                            <span class="text-sm text-gray-500">Custo estimado:</span>
+                            <span class="font-medium text-gray-900">R$ 1,20</span>
+                        </div>
+                    </div>
+
+                    <div id="imageGrid" class="grid grid-cols-4 gap-4">
+                        <!-- Placeholder images -->
+                        <div class="aspect-square bg-gray-100 rounded-lg flex items-center justify-center">
+                            <span class="text-gray-400 text-sm">Aguardando...</span>
+                        </div>
+                        <div class="aspect-square bg-gray-100 rounded-lg flex items-center justify-center">
+                            <span class="text-gray-400 text-sm">Aguardando...</span>
+                        </div>
+                        <div class="aspect-square bg-gray-100 rounded-lg flex items-center justify-center">
+                            <span class="text-gray-400 text-sm">Aguardando...</span>
+                        </div>
+                        <div class="aspect-square bg-gray-100 rounded-lg flex items-center justify-center">
+                            <span class="text-gray-400 text-sm">Aguardando...</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 flex gap-3">
+                        <button class="flex-1 bg-yellow-400 text-yellow-900 py-3 rounded-lg font-medium hover:bg-yellow-500 flex items-center justify-center gap-2" disabled id="btnML">
+                            <div class="w-5 h-5 bg-yellow-600 rounded flex items-center justify-center text-xs font-bold text-white">ML</div>
+                            Publicar no Mercado Livre
+                        </button>
+                        <button class="flex-1 bg-orange-500 text-white py-3 rounded-lg font-medium hover:bg-orange-600 flex items-center justify-center gap-2" disabled id="btnShopee">
+                            <div class="w-5 h-5 bg-white rounded flex items-center justify-center text-xs font-bold text-orange-500">S</div>
+                            Publicar na Shopee
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Chat IA -->
+                <div class="bg-white rounded-xl border border-gray-200 flex flex-col">
+                    <div class="p-4 border-b border-gray-200">
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
+                                <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path></svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Assistente de Anuncios</h3>
+                                <p class="text-xs text-green-500">Online</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-1 p-4 overflow-y-auto chat-container" id="chatMessages">
+                        <div class="flex gap-2 mb-4">
+                            <div class="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex-shrink-0"></div>
+                            <div class="bg-gray-100 rounded-lg p-3 max-w-[85%]">
+                                <p class="text-sm text-gray-800">Ola! Posso te ajudar a criar anuncios automaticamente. Comandos disponiveis:</p>
+                                <ul class="text-sm text-gray-600 mt-2 space-y-1">
+                                    <li>- "Cria anuncio para [produto]"</li>
+                                    <li>- "Gera 5 variacoes de imagem"</li>
+                                    <li>- "Publica no ML e Shopee"</li>
+                                    <li>- "Otimiza titulo para SEO"</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 border-t border-gray-200">
+                        <div class="flex gap-2">
+                            <input type="text" id="chatInput" placeholder="Cria anuncio para..." class="flex-1 border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-500" onkeypress="handleKeyPress(event)">
+                            <button onclick="sendMessage()" class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                            </button>
+                        </div>
+                        <div class="flex gap-2 mt-2 flex-wrap">
+                            <button onclick="quickQuestion('Gera mais 4 imagens')" class="text-xs bg-gray-100 hover:bg-gray-200 px-2 py-1 rounded text-gray-600">+4 imagens</button>
+                            <button onclick="quickQuestion('Otimiza o titulo')" class="text-xs bg-gray-100 hover:bg-gray-200 px-2 py-1 rounded text-gray-600">Otimizar titulo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+        const imageGrid = document.getElementById('imageGrid');
+
+        const generatedImages = [
+            'https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=400',
+            'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=400',
+            'https://images.unsplash.com/photo-1464037866556-6812c9d1c72e?w=400',
+            'https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=400'
+        ];
+
+        function generateImages() {
+            const grid = document.getElementById('imageGrid');
+            grid.innerHTML = '';
+
+            // Add generating placeholders
+            for (let i = 0; i < 4; i++) {
+                const div = document.createElement('div');
+                div.className = 'aspect-square generating rounded-lg flex items-center justify-center';
+                div.innerHTML = '<span class="text-gray-500 text-sm">Gerando...</span>';
+                grid.appendChild(div);
+            }
+
+            // Simulate image generation
+            generatedImages.forEach((url, index) => {
+                setTimeout(() => {
+                    const cells = grid.querySelectorAll('div');
+                    if (cells[index]) {
+                        cells[index].className = 'aspect-square rounded-lg overflow-hidden relative group fade-in cursor-pointer';
+                        cells[index].innerHTML = `
+                            <img src="${url}" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition flex items-center justify-center gap-2">
+                                <button class="bg-white text-gray-900 px-3 py-1.5 rounded-lg text-sm font-medium">Usar</button>
+                            </div>
+                            <div class="absolute top-2 right-2">
+                                <input type="checkbox" class="w-5 h-5 rounded">
+                            </div>
+                        `;
+                    }
+
+                    if (index === 3) {
+                        document.getElementById('btnML').disabled = false;
+                        document.getElementById('btnShopee').disabled = false;
+                        addMessage('Pronto! Gerei 4 imagens para o anuncio do F-14 Tomcat. Selecione as que voce quer usar e clique em publicar.');
+                    }
+                }, 1000 * (index + 1));
+            });
+        }
+
+        const responses = {
+            'imagens': 'Gerando mais 4 variacoes de imagem...\n\nUsando estilo: Produto em fundo branco, destaque para detalhes, angulos variados.\n\nCusto adicional: R$ 0,96',
+            'titulo': 'Titulo otimizado para SEO:\n\nAntes: "F-14 Tomcat Miniatura"\n\nDepois: "Miniatura F-14 Tomcat 1:72 - Aviacao Militar - Metal Diecast Premium - Colecionavel"\n\nMelhorias:\n- Palavras-chave de busca\n- Escala destacada\n- Material mencionado\n- Apelo para colecionadores',
+            'publica': 'Publicando anuncio...\n\nMercado Livre: Publicado com sucesso!\nID: MLB-789456123\n\nShopee: Publicado com sucesso!\nID: SHP-456789\n\nOs anuncios ja estao ativos e visiveis para os compradores.',
+            'cria': 'Anuncio criado com sucesso!\n\nTitulo: Gerado automaticamente\nDescricao: Otimizada para SEO\nPreco: R$ 159,00 (margem 59%)\nImagens: 4 geradas por IA\n\nPronto para publicar!',
+            'default': 'Entendi! Processando sua solicitacao...'
+        };
+
+        function addMessage(text, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `flex gap-2 mb-4 ${isUser ? 'flex-row-reverse' : ''}`;
+
+            const avatar = isUser
+                ? '<div class="w-6 h-6 bg-blue-600 rounded-full flex-shrink-0 flex items-center justify-center text-white text-xs">RK</div>'
+                : '<div class="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex-shrink-0"></div>';
+
+            const bgColor = isUser ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-800';
+
+            messageDiv.innerHTML = `
+                ${avatar}
+                <div class="${bgColor} rounded-lg p-3 max-w-[85%]">
+                    <p class="text-sm whitespace-pre-line">${text}</p>
+                </div>
+            `;
+
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function addTypingIndicator() {
+            const typingDiv = document.createElement('div');
+            typingDiv.id = 'typing';
+            typingDiv.className = 'flex gap-2 mb-4';
+            typingDiv.innerHTML = `
+                <div class="w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex-shrink-0"></div>
+                <div class="bg-gray-100 rounded-lg p-3">
+                    <div class="typing-indicator flex gap-1">
+                        <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                        <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                        <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                    </div>
+                </div>
+            `;
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function removeTypingIndicator() {
+            const typing = document.getElementById('typing');
+            if (typing) typing.remove();
+        }
+
+        function getResponse(message) {
+            const msg = message.toLowerCase();
+
+            if (msg.includes('imagem') || msg.includes('gera')) {
+                return responses.imagens;
+            }
+            if (msg.includes('titulo') || msg.includes('otimiza')) {
+                return responses.titulo;
+            }
+            if (msg.includes('publica')) {
+                return responses.publica;
+            }
+            if (msg.includes('cria') || msg.includes('anuncio')) {
+                return responses.cria;
+            }
+
+            return responses.default;
+        }
+
+        function sendMessage() {
+            const message = chatInput.value.trim();
+            if (!message) return;
+
+            addMessage(message, true);
+            chatInput.value = '';
+
+            addTypingIndicator();
+
+            setTimeout(() => {
+                removeTypingIndicator();
+                addMessage(getResponse(message));
+            }, 1500);
+        }
+
+        function quickQuestion(question) {
+            chatInput.value = question;
+            sendMessage();
+        }
+
+        function handleKeyPress(e) {
+            if (e.key === 'Enter') sendMessage();
+        }
+    </script>
+</body>
+</html>

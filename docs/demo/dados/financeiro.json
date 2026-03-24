@@ -1,0 +1,172 @@
+{
+  "resumo": {
+    "periodo": "2025",
+    "faturamento_total": 825000,
+    "despesas_total": 577500,
+    "lucro_bruto": 247500,
+    "margem_media": 30
+  },
+  "por_empresa": {
+    "continental": {
+      "faturamento": [
+        { "mes": "Janeiro", "valor": 120000 },
+        { "mes": "Fevereiro", "valor": 135000 },
+        { "mes": "Marco", "valor": 145000 }
+      ],
+      "despesas": [
+        { "mes": "Janeiro", "valor": 84000 },
+        { "mes": "Fevereiro", "valor": 94500 },
+        { "mes": "Marco", "valor": 101500 }
+      ]
+    },
+    "topo_minas": {
+      "faturamento": [
+        { "mes": "Janeiro", "valor": 85000 },
+        { "mes": "Fevereiro", "valor": 92000 },
+        { "mes": "Marco", "valor": 98000 }
+      ],
+      "despesas": [
+        { "mes": "Janeiro", "valor": 59500 },
+        { "mes": "Fevereiro", "valor": 64400 },
+        { "mes": "Marco", "valor": 68600 }
+      ]
+    },
+    "kraus_digital": {
+      "faturamento": [
+        { "mes": "Janeiro", "valor": 45000 },
+        { "mes": "Fevereiro", "valor": 48000 },
+        { "mes": "Marco", "valor": 57000 }
+      ],
+      "despesas": [
+        { "mes": "Janeiro", "valor": 31500 },
+        { "mes": "Fevereiro", "valor": 33600 },
+        { "mes": "Marco", "valor": 39900 }
+      ]
+    }
+  },
+  "consolidado": {
+    "mensal": [
+      { "mes": "Janeiro", "faturamento": 250000, "despesas": 175000, "lucro": 75000 },
+      { "mes": "Fevereiro", "faturamento": 275000, "despesas": 192500, "lucro": 82500 },
+      { "mes": "Marco", "faturamento": 300000, "despesas": 210000, "lucro": 90000 }
+    ]
+  },
+  "transacoes_recentes": [
+    {
+      "id": 1,
+      "data": "2025-03-24",
+      "descricao": "Venda Drone DJI Mini SE",
+      "empresa": "continental",
+      "tipo": "receita",
+      "valor": 2139.00,
+      "categoria": "Vendas ML"
+    },
+    {
+      "id": 2,
+      "data": "2025-03-24",
+      "descricao": "Frete Correios - Lote SP",
+      "empresa": "continental",
+      "tipo": "despesa",
+      "valor": 450.00,
+      "categoria": "Logistica"
+    },
+    {
+      "id": 3,
+      "data": "2025-03-23",
+      "descricao": "Venda F-14 Tomcat x3",
+      "empresa": "topo_minas",
+      "tipo": "receita",
+      "valor": 477.00,
+      "categoria": "Vendas Shopee"
+    },
+    {
+      "id": 4,
+      "data": "2025-03-23",
+      "descricao": "Compra estoque China - Miniaturas",
+      "empresa": "topo_minas",
+      "tipo": "despesa",
+      "valor": 3200.00,
+      "categoria": "Estoque"
+    },
+    {
+      "id": 5,
+      "data": "2025-03-22",
+      "descricao": "Taxa Mercado Livre",
+      "empresa": "kraus_digital",
+      "tipo": "despesa",
+      "valor": 892.00,
+      "categoria": "Taxas"
+    },
+    {
+      "id": 6,
+      "data": "2025-03-22",
+      "descricao": "Venda Lego Technic x2",
+      "empresa": "kraus_digital",
+      "tipo": "receita",
+      "valor": 598.00,
+      "categoria": "Vendas ML"
+    },
+    {
+      "id": 7,
+      "data": "2025-03-21",
+      "descricao": "Salario funcionario SP",
+      "empresa": "continental",
+      "tipo": "despesa",
+      "valor": 2500.00,
+      "categoria": "Pessoal"
+    },
+    {
+      "id": 8,
+      "data": "2025-03-21",
+      "descricao": "Venda Camera IP x5",
+      "empresa": "continental",
+      "tipo": "receita",
+      "valor": 945.00,
+      "categoria": "Vendas Shopee"
+    }
+  ],
+  "contas_pagar": [
+    {
+      "id": 1,
+      "descricao": "Fornecedor China - Container",
+      "empresa": "continental",
+      "valor": 15000.00,
+      "vencimento": "2025-03-30",
+      "status": "pendente"
+    },
+    {
+      "id": 2,
+      "descricao": "Aluguel Galpao SP",
+      "empresa": "continental",
+      "valor": 3500.00,
+      "vencimento": "2025-04-05",
+      "status": "pendente"
+    },
+    {
+      "id": 3,
+      "descricao": "Cartao de Credito Inter",
+      "empresa": "topo_minas",
+      "valor": 8500.00,
+      "vencimento": "2025-04-10",
+      "status": "pendente"
+    }
+  ],
+  "contas_receber": [
+    {
+      "id": 1,
+      "descricao": "Repasse Mercado Livre",
+      "empresa": "continental",
+      "valor": 45000.00,
+      "previsao": "2025-03-28",
+      "status": "confirmado"
+    },
+    {
+      "id": 2,
+      "descricao": "Repasse Shopee",
+      "empresa": "topo_minas",
+      "valor": 28000.00,
+      "previsao": "2025-03-29",
+      "status": "confirmado"
+    }
+  ]
+}

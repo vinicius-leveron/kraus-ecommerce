@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kraus E-commerce - Dashboard Financeiro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .chat-container { height: 400px; }
+        .typing-indicator span {
+            animation: typing 1.4s infinite;
+            animation-fill-mode: both;
+        }
+        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes typing {
+            0% { opacity: 0.2; }
+            20% { opacity: 1; }
+            100% { opacity: 0.2; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 px-6 py-4">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <h1 class="text-xl font-bold text-gray-900">Kraus E-commerce</h1>
+                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Dashboard Financeiro</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <select id="empresaSelect" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg px-4 py-2">
+                    <option value="todas">Todas as Empresas</option>
+                    <option value="continental">Continental Imports</option>
+                    <option value="topo_minas">Topo Minas</option>
+                    <option value="kraus_digital">Kraus Digital</option>
+                </select>
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-medium">RK</div>
+                    <span class="text-sm text-gray-700">Renan Kraus</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-white border-r border-gray-200 min-h-screen p-4">
+            <nav class="space-y-2">
+                <a href="dashboard-financeiro.html" class="flex items-center gap-3 px-4 py-2 bg-blue-50 text-blue-700 rounded-lg font-medium">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    Financeiro
+                </a>
+                <a href="sistema-estoque.html" class="flex items-center gap-3 px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                    Estoque
+                </a>
+                <a href="criacao-anuncios.html" class="flex items-center gap-3 px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path></svg>
+                    Anuncios
+                </a>
+                <a href="atendimento.html" class="flex items-center gap-3 px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                    Atendimento
+                </a>
+            </nav>
+
+            <!-- Empresas -->
+            <div class="mt-8">
+                <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Empresas</h3>
+                <div class="space-y-2">
+                    <div class="flex items-center gap-2 px-2 py-1.5 rounded cursor-pointer hover:bg-gray-50" onclick="selectEmpresa('continental')">
+                        <div class="w-3 h-3 rounded-full bg-blue-500"></div>
+                        <span class="text-sm text-gray-700">Continental Imports</span>
+                    </div>
+                    <div class="flex items-center gap-2 px-2 py-1.5 rounded cursor-pointer hover:bg-gray-50" onclick="selectEmpresa('topo_minas')">
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        <span class="text-sm text-gray-700">Topo Minas</span>
+                    </div>
+                    <div class="flex items-center gap-2 px-2 py-1.5 rounded cursor-pointer hover:bg-gray-50" onclick="selectEmpresa('kraus_digital')">
+                        <div class="w-3 h-3 rounded-full bg-purple-500"></div>
+                        <span class="text-sm text-gray-700">Kraus Digital</span>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-6">
+            <!-- KPI Cards -->
+            <div class="grid grid-cols-4 gap-4 mb-6">
+                <div class="bg-white rounded-xl p-4 border border-gray-200">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">Faturamento (Mar)</span>
+                        <span class="text-green-500 text-xs">+9.1%</span>
+                    </div>
+                    <p class="text-2xl font-bold text-gray-900 mt-1" id="kpi-faturamento">R$ 300.000</p>
+                    <p class="text-xs text-gray-500 mt-1">vs R$ 275.000 em Fev</p>
+                </div>
+                <div class="bg-white rounded-xl p-4 border border-gray-200">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">Despesas (Mar)</span>
+                        <span class="text-red-500 text-xs">+9.1%</span>
+                    </div>
+                    <p class="text-2xl font-bold text-gray-900 mt-1" id="kpi-despesas">R$ 210.000</p>
+                    <p class="text-xs text-gray-500 mt-1">70% do faturamento</p>
+                </div>
+                <div class="bg-white rounded-xl p-4 border border-gray-200">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">Lucro Bruto (Mar)</span>
+                        <span class="text-green-500 text-xs">+9.1%</span>
+                    </div>
+                    <p class="text-2xl font-bold text-green-600 mt-1" id="kpi-lucro">R$ 90.000</p>
+                    <p class="text-xs text-gray-500 mt-1">Margem: 30%</p>
+                </div>
+                <div class="bg-white rounded-xl p-4 border border-gray-200">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">A Receber</span>
+                        <span class="text-blue-500 text-xs">Confirmado</span>
+                    </div>
+                    <p class="text-2xl font-bold text-blue-600 mt-1">R$ 73.000</p>
+                    <p class="text-xs text-gray-500 mt-1">Proximos 7 dias</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-6">
+                <!-- Grafico -->
+                <div class="col-span-2 bg-white rounded-xl p-6 border border-gray-200">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-lg font-semibold text-gray-900">Faturamento por Empresa</h2>
+                        <select class="text-sm border border-gray-300 rounded-lg px-3 py-1.5">
+                            <option>Ultimos 3 meses</option>
+                            <option>Ultimo mes</option>
+                            <option>Ultimo ano</option>
+                        </select>
+                    </div>
+                    <canvas id="faturamentoChart" height="200"></canvas>
+                </div>
+
+                <!-- Chat IA -->
+                <div class="bg-white rounded-xl border border-gray-200 flex flex-col">
+                    <div class="p-4 border-b border-gray-200">
+                        <div class="flex items-center gap-2">
+                            <div class="w-8 h-8 bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg flex items-center justify-center">
+                                <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Assistente IA</h3>
+                                <p class="text-xs text-green-500">Online</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-1 p-4 overflow-y-auto chat-container" id="chatMessages">
+                        <div class="flex gap-2 mb-4">
+                            <div class="w-6 h-6 bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg flex-shrink-0"></div>
+                            <div class="bg-gray-100 rounded-lg p-3 max-w-[85%]">
+                                <p class="text-sm text-gray-800">Ola Renan! Sou seu assistente financeiro. Posso te ajudar com:</p>
+                                <ul class="text-sm text-gray-600 mt-2 space-y-1">
+                                    <li>- Consultar faturamento por empresa</li>
+                                    <li>- Registrar receitas e despesas</li>
+                                    <li>- Gerar projecoes de fluxo de caixa</li>
+                                    <li>- Comparar periodos</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 border-t border-gray-200">
+                        <div class="flex gap-2">
+                            <input type="text" id="chatInput" placeholder="Digite sua pergunta..." class="flex-1 border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" onkeypress="handleKeyPress(event)">
+                            <button onclick="sendMessage()" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                            </button>
+                        </div>
+                        <div class="flex gap-2 mt-2">
+                            <button onclick="quickQuestion('Qual foi o faturamento da Continental esse mes?')" class="text-xs bg-gray-100 hover:bg-gray-200 px-2 py-1 rounded text-gray-600">Faturamento Continental</button>
+                            <button onclick="quickQuestion('Me mostra projecao de 3 meses')" class="text-xs bg-gray-100 hover:bg-gray-200 px-2 py-1 rounded text-gray-600">Projecao</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Transacoes Recentes -->
+            <div class="mt-6 bg-white rounded-xl border border-gray-200">
+                <div class="p-4 border-b border-gray-200 flex items-center justify-between">
+                    <h2 class="text-lg font-semibold text-gray-900">Transacoes Recentes</h2>
+                    <button class="text-sm text-blue-600 hover:text-blue-800">Ver todas</button>
+                </div>
+                <div class="divide-y divide-gray-100">
+                    <div class="p-4 flex items-center justify-between hover:bg-gray-50">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                            </div>
+                            <div>
+                                <p class="font-medium text-gray-900">Venda Drone DJI Mini SE</p>
+                                <p class="text-sm text-gray-500">Continental Imports - Mercado Livre</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-semibold text-green-600">+ R$ 2.139,00</p>
+                            <p class="text-xs text-gray-500">Hoje</p>
+                        </div>
+                    </div>
+                    <div class="p-4 flex items-center justify-between hover:bg-gray-50">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+                                <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path></svg>
+                            </div>
+                            <div>
+                                <p class="font-medium text-gray-900">Frete Correios - Lote SP</p>
+                                <p class="text-sm text-gray-500">Continental Imports - Logistica</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-semibold text-red-600">- R$ 450,00</p>
+                            <p class="text-xs text-gray-500">Hoje</p>
+                        </div>
+                    </div>
+                    <div class="p-4 flex items-center justify-between hover:bg-gray-50">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                                <svg class="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                            </div>
+                            <div>
+                                <p class="font-medium text-gray-900">Venda F-14 Tomcat x3</p>
+                                <p class="text-sm text-gray-500">Topo Minas - Shopee</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-semibold text-green-600">+ R$ 477,00</p>
+                            <p class="text-xs text-gray-500">Ontem</p>
+                        </div>
+                    </div>
+                    <div class="p-4 flex items-center justify-between hover:bg-gray-50">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-red-100 rounded-full flex items-center justify-center">
+                                <svg class="w-5 h-5 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path></svg>
+                            </div>
+                            <div>
+                                <p class="font-medium text-gray-900">Compra estoque China - Miniaturas</p>
+                                <p class="text-sm text-gray-500">Topo Minas - Estoque</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <p class="font-semibold text-red-600">- R$ 3.200,00</p>
+                            <p class="text-xs text-gray-500">Ontem</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Chart.js - Grafico de Faturamento
+        const ctx = document.getElementById('faturamentoChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Janeiro', 'Fevereiro', 'Marco'],
+                datasets: [
+                    {
+                        label: 'Continental Imports',
+                        data: [120000, 135000, 145000],
+                        backgroundColor: '#3B82F6',
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'Topo Minas',
+                        data: [85000, 92000, 98000],
+                        backgroundColor: '#10B981',
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'Kraus Digital',
+                        data: [45000, 48000, 57000],
+                        backgroundColor: '#8B5CF6',
+                        borderRadius: 4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return 'R$ ' + value.toLocaleString('pt-BR');
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // Chat functionality
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+
+        const responses = {
+            'faturamento': {
+                'continental': 'O faturamento da Continental Imports em Marco foi de R$ 145.000,00, um aumento de 7,4% em relacao a Fevereiro (R$ 135.000,00).',
+                'topo_minas': 'O faturamento da Topo Minas em Marco foi de R$ 98.000,00, um aumento de 6,5% em relacao a Fevereiro (R$ 92.000,00).',
+                'kraus_digital': 'O faturamento da Kraus Digital em Marco foi de R$ 57.000,00, um aumento de 18,7% em relacao a Fevereiro (R$ 48.000,00).',
+                'total': 'O faturamento total em Marco foi de R$ 300.000,00, distribuido entre Continental (R$ 145k), Topo Minas (R$ 98k) e Kraus Digital (R$ 57k).'
+            },
+            'projecao': 'Com base nos ultimos 3 meses, a projecao para o proximo trimestre e:\n\n- Abril: R$ 315.000 (+5%)\n- Maio: R$ 330.750 (+5%)\n- Junho: R$ 347.287 (+5%)\n\nTendencia de crescimento consistente de ~5% ao mes.',
+            'registrar': 'Lancamento registrado com sucesso! Atualizei o dashboard com a nova transacao.',
+            'default': 'Entendi sua pergunta. Deixa eu buscar essa informacao para voce...'
+        };
+
+        function addMessage(text, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `flex gap-2 mb-4 ${isUser ? 'flex-row-reverse' : ''}`;
+
+            const avatar = isUser
+                ? '<div class="w-6 h-6 bg-blue-600 rounded-full flex-shrink-0 flex items-center justify-center text-white text-xs">RK</div>'
+                : '<div class="w-6 h-6 bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg flex-shrink-0"></div>';
+
+            const bgColor = isUser ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-800';
+
+            messageDiv.innerHTML = `
+                ${avatar}
+                <div class="${bgColor} rounded-lg p-3 max-w-[85%]">
+                    <p class="text-sm whitespace-pre-line">${text}</p>
+                </div>
+            `;
+
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function addTypingIndicator() {
+            const typingDiv = document.createElement('div');
+            typingDiv.id = 'typing';
+            typingDiv.className = 'flex gap-2 mb-4';
+            typingDiv.innerHTML = `
+                <div class="w-6 h-6 bg-gradient-to-br from-purple-500 to-blue-500 rounded-lg flex-shrink-0"></div>
+                <div class="bg-gray-100 rounded-lg p-3">
+                    <div class="typing-indicator flex gap-1">
+                        <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                        <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                        <span class="w-2 h-2 bg-gray-400 rounded-full"></span>
+                    </div>
+                </div>
+            `;
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function removeTypingIndicator() {
+            const typing = document.getElementById('typing');
+            if (typing) typing.remove();
+        }
+
+        function getResponse(message) {
+            const msg = message.toLowerCase();
+
+            if (msg.includes('continental') && (msg.includes('faturamento') || msg.includes('quanto'))) {
+                return responses.faturamento.continental;
+            }
+            if (msg.includes('topo') && (msg.includes('faturamento') || msg.includes('quanto'))) {
+                return responses.faturamento.topo_minas;
+            }
+            if (msg.includes('kraus') && (msg.includes('faturamento') || msg.includes('quanto'))) {
+                return responses.faturamento.kraus_digital;
+            }
+            if (msg.includes('faturamento') || msg.includes('quanto')) {
+                return responses.faturamento.total;
+            }
+            if (msg.includes('projecao') || msg.includes('projetar') || msg.includes('prever')) {
+                return responses.projecao;
+            }
+            if (msg.includes('registra') || msg.includes('lancar') || msg.includes('recebi')) {
+                return responses.registrar;
+            }
+
+            return responses.default;
+        }
+
+        function sendMessage() {
+            const message = chatInput.value.trim();
+            if (!message) return;
+
+            addMessage(message, true);
+            chatInput.value = '';
+
+            addTypingIndicator();
+
+            setTimeout(() => {
+                removeTypingIndicator();
+                addMessage(getResponse(message));
+            }, 1500);
+        }
+
+        function quickQuestion(question) {
+            chatInput.value = question;
+            sendMessage();
+        }
+
+        function handleKeyPress(e) {
+            if (e.key === 'Enter') sendMessage();
+        }
+
+        function selectEmpresa(empresa) {
+            document.getElementById('empresaSelect').value = empresa;
+        }
+    </script>
+</body>
+</html>

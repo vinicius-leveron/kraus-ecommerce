@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kraus E-commerce - Atendimento</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .pulse-dot {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200 px-6 py-4">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center gap-4">
+                <h1 class="text-xl font-bold text-gray-900">Kraus E-commerce</h1>
+                <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded">Atendimento</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-2 bg-green-50 px-3 py-1.5 rounded-lg">
+                    <div class="w-2 h-2 bg-green-500 rounded-full pulse-dot"></div>
+                    <span class="text-sm text-green-700">Bot ativo</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white text-sm font-medium">RK</div>
+                    <span class="text-sm text-gray-700">Renan Kraus</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-white border-r border-gray-200 min-h-screen p-4">
+            <nav class="space-y-2">
+                <a href="dashboard-financeiro.html" class="flex items-center gap-3 px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    Financeiro
+                </a>
+                <a href="sistema-estoque.html" class="flex items-center gap-3 px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                    Estoque
+                </a>
+                <a href="criacao-anuncios.html" class="flex items-center gap-3 px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z"></path></svg>
+                    Anuncios
+                </a>
+                <a href="atendimento.html" class="flex items-center gap-3 px-4 py-2 bg-purple-50 text-purple-700 rounded-lg font-medium">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+                    Atendimento
+                </a>
+            </nav>
+
+            <!-- Canais -->
+            <div class="mt-8">
+                <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Canais</h3>
+                <div class="space-y-2">
+                    <div class="flex items-center justify-between px-2 py-1.5 rounded bg-orange-50">
+                        <div class="flex items-center gap-2">
+                            <div class="w-6 h-6 bg-orange-500 rounded flex items-center justify-center text-xs font-bold text-white">S</div>
+                            <span class="text-sm text-gray-700">Shopee</span>
+                        </div>
+                        <span class="bg-orange-500 text-white text-xs px-2 py-0.5 rounded-full">12</span>
+                    </div>
+                    <div class="flex items-center justify-between px-2 py-1.5 rounded">
+                        <div class="flex items-center gap-2">
+                            <div class="w-6 h-6 bg-yellow-400 rounded flex items-center justify-center text-xs font-bold text-yellow-900">ML</div>
+                            <span class="text-sm text-gray-700">Mercado Livre</span>
+                        </div>
+                        <span class="bg-gray-200 text-gray-600 text-xs px-2 py-0.5 rounded-full">5</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Metricas -->
+            <div class="mt-8">
+                <h3 class="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-3">Metricas Hoje</h3>
+                <div class="space-y-3">
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-600">Tempo Resposta</span>
+                            <span class="text-green-600 text-xs">-85%</span>
+                        </div>
+                        <p class="text-xl font-bold text-green-700">32 seg</p>
+                        <p class="text-xs text-gray-500">Antes: 3.5 min</p>
+                    </div>
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-600">Resolvidos Bot</span>
+                        </div>
+                        <p class="text-xl font-bold text-blue-700">78%</p>
+                        <p class="text-xs text-gray-500">156 de 200 mensagens</p>
+                    </div>
+                    <div class="bg-purple-50 border border-purple-200 rounded-lg p-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-600">Nota Shopee</span>
+                            <span class="text-green-600 text-xs">+0.3</span>
+                        </div>
+                        <p class="text-xl font-bold text-purple-700">4.9</p>
+                        <p class="text-xs text-gray-500">Antes: 4.6</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 p-6">
+            <!-- KPI Cards -->
+            <div class="grid grid-cols-4 gap-4 mb-6">
+                <div class="bg-white rounded-xl p-4 border border-gray-200">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">Mensagens Hoje</span>
+                        <span class="text-green-500 text-xs">+23%</span>
+                    </div>
+                    <p class="text-2xl font-bold text-gray-900 mt-1">200</p>
+                    <p class="text-xs text-gray-500 mt-1">vs 163 ontem</p>
+                </div>
+                <div class="bg-white rounded-xl p-4 border border-gray-200">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">Resolvidas pelo Bot</span>
+                    </div>
+                    <p class="text-2xl font-bold text-green-600 mt-1">156</p>
+                    <p class="text-xs text-gray-500 mt-1">78% automatico</p>
+                </div>
+                <div class="bg-white rounded-xl p-4 border border-gray-200">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">Aguardando Humano</span>
+                    </div>
+                    <p class="text-2xl font-bold text-orange-600 mt-1">17</p>
+                    <p class="text-xs text-gray-500 mt-1">8.5% do total</p>
+                </div>
+                <div class="bg-white rounded-xl p-4 border border-gray-200">
+                    <div class="flex items-center justify-between">
+                        <span class="text-sm text-gray-500">Tempo Economizado</span>
+                    </div>
+                    <p class="text-2xl font-bold text-purple-600 mt-1">4.2h</p>
+                    <p class="text-xs text-gray-500 mt-1">hoje</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-6">
+                <!-- Inbox -->
+                <div class="col-span-2 bg-white rounded-xl border border-gray-200">
+                    <div class="p-4 border-b border-gray-200 flex items-center justify-between">
+                        <div class="flex items-center gap-4">
+                            <h2 class="text-lg font-semibold text-gray-900">Inbox</h2>
+                            <div class="flex gap-2">
+                                <button class="px-3 py-1 bg-purple-100 text-purple-700 rounded-lg text-sm font-medium">Todos (17)</button>
+                                <button class="px-3 py-1 text-gray-600 hover:bg-gray-100 rounded-lg text-sm">Shopee (12)</button>
+                                <button class="px-3 py-1 text-gray-600 hover:bg-gray-100 rounded-lg text-sm">ML (5)</button>
+                            </div>
+                        </div>
+                        <select class="bg-gray-50 border border-gray-300 rounded-lg px-3 py-1.5 text-sm">
+                            <option>Aguardando resposta</option>
+                            <option>Todos</option>
+                            <option>Resolvidos</option>
+                        </select>
+                    </div>
+
+                    <div class="divide-y divide-gray-100 max-h-[500px] overflow-y-auto">
+                        <!-- Conversa 1 - Escalada -->
+                        <div class="p-4 hover:bg-gray-50 cursor-pointer border-l-4 border-orange-500">
+                            <div class="flex items-start gap-3">
+                                <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
+                                    <span class="text-orange-600 font-medium">JM</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-2">
+                                            <p class="font-medium text-gray-900">Joao Marcos</p>
+                                            <span class="bg-orange-100 text-orange-700 text-xs px-2 py-0.5 rounded">Shopee</span>
+                                            <span class="bg-red-100 text-red-700 text-xs px-2 py-0.5 rounded">Escalado</span>
+                                        </div>
+                                        <span class="text-xs text-gray-500">2 min</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 mt-1">Quero falar com o vendedor sobre uma troca</p>
+                                    <p class="text-xs text-gray-400 mt-1">Produto: F-14 Tomcat Miniatura - Pedido #456789</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Conversa 2 - Resolvida Bot -->
+                        <div class="p-4 hover:bg-gray-50 cursor-pointer bg-green-50/50">
+                            <div class="flex items-start gap-3">
+                                <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                                    <span class="text-green-600 font-medium">AS</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-2">
+                                            <p class="font-medium text-gray-900">Ana Silva</p>
+                                            <span class="bg-orange-100 text-orange-700 text-xs px-2 py-0.5 rounded">Shopee</span>
+                                            <span class="bg-green-100 text-green-700 text-xs px-2 py-0.5 rounded flex items-center gap-1">
+                                                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                                Bot resolveu
+                                            </span>
+                                        </div>
+                                        <span class="text-xs text-gray-500">5 min</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 mt-1">Tem em estoque?</p>
+                                    <p class="text-xs text-green-600 mt-1">Bot: "Sim! Temos 13 unidades disponiveis. Posso te ajudar com mais alguma coisa?"</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Conversa 3 - Resolvida Bot -->
+                        <div class="p-4 hover:bg-gray-50 cursor-pointer bg-green-50/50">
+                            <div class="flex items-start gap-3">
+                                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                                    <span class="text-blue-600 font-medium">PL</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-2">
+                                            <p class="font-medium text-gray-900">Pedro Lima</p>
+                                            <span class="bg-yellow-100 text-yellow-700 text-xs px-2 py-0.5 rounded">ML</span>
+                                            <span class="bg-green-100 text-green-700 text-xs px-2 py-0.5 rounded flex items-center gap-1">
+                                                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                                Bot resolveu
+                                            </span>
+                                        </div>
+                                        <span class="text-xs text-gray-500">8 min</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 mt-1">Quando chega em SP?</p>
+                                    <p class="text-xs text-green-600 mt-1">Bot: "Estimativa de entrega: 3-5 dias uteis para SP capital. Enviamos pelos Correios SEDEX."</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Conversa 4 - Aguardando -->
+                        <div class="p-4 hover:bg-gray-50 cursor-pointer border-l-4 border-yellow-500">
+                            <div class="flex items-start gap-3">
+                                <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center">
+                                    <span class="text-yellow-600 font-medium">MR</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-2">
+                                            <p class="font-medium text-gray-900">Maria Ribeiro</p>
+                                            <span class="bg-orange-100 text-orange-700 text-xs px-2 py-0.5 rounded">Shopee</span>
+                                            <span class="bg-yellow-100 text-yellow-700 text-xs px-2 py-0.5 rounded">Aguardando</span>
+                                        </div>
+                                        <span class="text-xs text-gray-500">12 min</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 mt-1">Vcs fazem preco pra 5 unidades?</p>
+                                    <p class="text-xs text-gray-400 mt-1">Bot nao soube responder - encaminhado para humano</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Conversa 5 - Resolvida Bot -->
+                        <div class="p-4 hover:bg-gray-50 cursor-pointer bg-green-50/50">
+                            <div class="flex items-start gap-3">
+                                <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
+                                    <span class="text-purple-600 font-medium">CS</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-2">
+                                            <p class="font-medium text-gray-900">Carlos Santos</p>
+                                            <span class="bg-orange-100 text-orange-700 text-xs px-2 py-0.5 rounded">Shopee</span>
+                                            <span class="bg-green-100 text-green-700 text-xs px-2 py-0.5 rounded flex items-center gap-1">
+                                                <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                                Bot resolveu
+                                            </span>
+                                        </div>
+                                        <span class="text-xs text-gray-500">15 min</span>
+                                    </div>
+                                    <p class="text-sm text-gray-600 mt-1">O drone vem com bateria extra?</p>
+                                    <p class="text-xs text-green-600 mt-1">Bot: "O Drone DJI Mini SE acompanha 1 bateria. Bateria extra disponivel por R$ 199,00. Deseja adicionar ao pedido?"</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detalhes da Conversa -->
+                <div class="bg-white rounded-xl border border-gray-200 flex flex-col">
+                    <div class="p-4 border-b border-gray-200">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
+                                    <span class="text-orange-600 font-medium">JM</span>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-900">Joao Marcos</p>
+                                    <p class="text-xs text-gray-500">Shopee - Pedido #456789</p>
+                                </div>
+                            </div>
+                            <span class="bg-red-100 text-red-700 text-xs px-2 py-1 rounded-lg">Precisa atencao</span>
+                        </div>
+                    </div>
+
+                    <div class="flex-1 p-4 overflow-y-auto space-y-4" style="max-height: 350px;">
+                        <!-- Mensagem cliente -->
+                        <div class="flex gap-2">
+                            <div class="w-6 h-6 bg-orange-100 rounded-full flex-shrink-0 flex items-center justify-center">
+                                <span class="text-orange-600 text-xs font-medium">JM</span>
+                            </div>
+                            <div class="bg-gray-100 rounded-lg p-3 max-w-[85%]">
+                                <p class="text-sm text-gray-800">Ola, tem estoque?</p>
+                                <p class="text-xs text-gray-400 mt-1">14:32</p>
+                            </div>
+                        </div>
+
+                        <!-- Resposta bot -->
+                        <div class="flex gap-2 flex-row-reverse">
+                            <div class="w-6 h-6 bg-purple-500 rounded-full flex-shrink-0 flex items-center justify-center">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 11a1 1 0 11-2 0 1 1 0 012 0zm0-3a1 1 0 01-2 0V7a1 1 0 112 0v3z"/></svg>
+                            </div>
+                            <div class="bg-purple-100 rounded-lg p-3 max-w-[85%]">
+                                <p class="text-sm text-gray-800">Ola Joao! Sim, temos 55 unidades do F-14 Tomcat em estoque. Posso te ajudar com mais alguma informacao?</p>
+                                <p class="text-xs text-purple-500 mt-1">Bot - 14:32 (resposta em 8 seg)</p>
+                            </div>
+                        </div>
+
+                        <!-- Mensagem cliente -->
+                        <div class="flex gap-2">
+                            <div class="w-6 h-6 bg-orange-100 rounded-full flex-shrink-0 flex items-center justify-center">
+                                <span class="text-orange-600 text-xs font-medium">JM</span>
+                            </div>
+                            <div class="bg-gray-100 rounded-lg p-3 max-w-[85%]">
+                                <p class="text-sm text-gray-800">Legal! Mas quero falar com o vendedor sobre uma troca de um pedido anterior</p>
+                                <p class="text-xs text-gray-400 mt-1">14:35</p>
+                            </div>
+                        </div>
+
+                        <!-- Bot escalando -->
+                        <div class="flex gap-2 flex-row-reverse">
+                            <div class="w-6 h-6 bg-purple-500 rounded-full flex-shrink-0 flex items-center justify-center">
+                                <svg class="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20"><path d="M10 2a8 8 0 100 16 8 8 0 000-16zm1 11a1 1 0 11-2 0 1 1 0 012 0zm0-3a1 1 0 01-2 0V7a1 1 0 112 0v3z"/></svg>
+                            </div>
+                            <div class="bg-yellow-100 rounded-lg p-3 max-w-[85%]">
+                                <p class="text-sm text-gray-800">Entendi! Vou encaminhar para nosso time de atendimento. Um momento, por favor.</p>
+                                <p class="text-xs text-yellow-600 mt-1">Bot - Escalando para humano</p>
+                            </div>
+                        </div>
+
+                        <!-- Alerta sistema -->
+                        <div class="bg-red-50 border border-red-200 rounded-lg p-3 text-center">
+                            <p class="text-sm text-red-700">Conversa escalada para atendimento humano</p>
+                            <p class="text-xs text-red-500">Motivo: Cliente solicitou falar com vendedor</p>
+                        </div>
+                    </div>
+
+                    <div class="p-4 border-t border-gray-200">
+                        <div class="flex gap-2 mb-3">
+                            <input type="text" placeholder="Digite sua resposta..." class="flex-1 border border-gray-300 rounded-lg px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-purple-500">
+                            <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                            </button>
+                        </div>
+                        <div class="flex gap-2">
+                            <button class="flex-1 text-sm bg-green-100 text-green-700 py-2 rounded-lg hover:bg-green-200">Marcar Resolvido</button>
+                            <button class="flex-1 text-sm bg-gray-100 text-gray-700 py-2 rounded-lg hover:bg-gray-200">Resposta Rapida</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Configuracoes do Bot -->
+            <div class="mt-6 bg-white rounded-xl border border-gray-200 p-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-lg font-semibold text-gray-900">Configuracoes do Bot</h2>
+                    <div class="flex items-center gap-2">
+                        <span class="text-sm text-gray-500">Status:</span>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" checked class="sr-only peer">
+                            <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-green-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"></div>
+                            <span class="ml-2 text-sm font-medium text-green-600">Ativo</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-3 gap-6">
+                    <div class="border border-gray-200 rounded-lg p-4">
+                        <h3 class="font-medium text-gray-900 mb-2">Respostas Automaticas</h3>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                Consulta de estoque
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                Prazo de entrega
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                Informacoes do produto
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                                Formas de pagamento
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="border border-gray-200 rounded-lg p-4">
+                        <h3 class="font-medium text-gray-900 mb-2">Escalar para Humano</h3>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-orange-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
+                                Solicitacao de troca/devolucao
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-orange-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
+                                Reclamacao/problema
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-orange-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
+                                Negociacao de preco
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-orange-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg>
+                                Cliente pede humano
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="border border-gray-200 rounded-lg p-4">
+                        <h3 class="font-medium text-gray-900 mb-2">Integracao</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-6 h-6 bg-orange-500 rounded flex items-center justify-center text-xs font-bold text-white">S</div>
+                                    <span class="text-sm">Shopee</span>
+                                </div>
+                                <span class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded">Conectado</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-6 h-6 bg-yellow-400 rounded flex items-center justify-center text-xs font-bold text-yellow-900">ML</div>
+                                    <span class="text-sm">Mercado Livre</span>
+                                </div>
+                                <span class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded">Conectado</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-6 h-6 bg-green-500 rounded flex items-center justify-center text-xs font-bold text-white">E</div>
+                                    <span class="text-sm">Estoque</span>
+                                </div>
+                                <span class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded">Sincronizado</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

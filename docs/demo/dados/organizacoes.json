@@ -1,0 +1,65 @@
+{
+  "organizacoes": [
+    {
+      "id": "continental",
+      "nome": "Continental Imports",
+      "cnpj": "12.345.678/0001-01",
+      "tipo": "Produtos Importados Legais",
+      "localizacao": "Sao Paulo",
+      "cor": "#3B82F6",
+      "responsavel": "Renan Kraus",
+      "banco": {
+        "nome": "Banco Inter",
+        "agencia": "0001",
+        "conta": "12345-6"
+      },
+      "status": "ativo"
+    },
+    {
+      "id": "topo_minas",
+      "nome": "Topo Minas",
+      "cnpj": "23.456.789/0001-02",
+      "tipo": "Miniaturas e Brinquedos",
+      "localizacao": "Sao Jose",
+      "cor": "#10B981",
+      "responsavel": "Diogo",
+      "banco": {
+        "nome": "Nubank",
+        "agencia": "0001",
+        "conta": "23456-7"
+      },
+      "status": "ativo"
+    },
+    {
+      "id": "kraus_digital",
+      "nome": "Kraus Digital",
+      "cnpj": "34.567.890/0001-03",
+      "tipo": "E-commerce Geral",
+      "localizacao": "Sao Jose",
+      "cor": "#8B5CF6",
+      "responsavel": "Renan Kraus",
+      "banco": {
+        "nome": "Mercado Pago",
+        "agencia": "0001",
+        "conta": "34567-8"
+      },
+      "status": "ativo"
+    }
+  ],
+  "localizacoes": [
+    {
+      "id": "sao_jose",
+      "nome": "Galpao Sao Jose",
+      "endereco": "Rua das Industrias, 123 - Sao Jose, SC",
+      "tipo": "Estoque Principal",
+      "capacidade": 500
+    },
+    {
+      "id": "sao_paulo",
+      "nome": "Operacao Sao Paulo",
+      "endereco": "Rua dos Comerciantes, 456 - Sao Paulo, SP",
+      "tipo": "Estoque + Expedicao",
+      "capacidade": 300
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "produtos": [
+    {
+      "sku": "DRN001",
+      "nome": "Drone DJI Mini SE",
+      "categoria": "Drones",
+      "preco": 2139.00,
+      "custo": 1500.00,
+      "margem": 29.9,
+      "estoque": {
+        "sao_jose": 5,
+        "sao_paulo": 8
+      },
+      "imagem": "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=400",
+      "marketplace": {
+        "mercado_livre": true,
+        "shopee": true,
+        "tiktok": false
+      },
+      "vendas_mes": 12,
+      "nota": 5.0
+    },
+    {
+      "sku": "DRN002",
+      "nome": "Controle Drone Universal",
+      "categoria": "Drones",
+      "preco": 189.00,
+      "custo": 95.00,
+      "margem": 49.7,
+      "estoque": {
+        "sao_jose": 15,
+        "sao_paulo": 20
+      },
+      "imagem": "https://images.unsplash.com/photo-1579829366248-204fe8413f31?w=400",
+      "marketplace": {
+        "mercado_livre": true,
+        "shopee": true,
+        "tiktok": false
+      },
+      "vendas_mes": 28,
+      "nota": 4.8
+    },
+    {
+      "sku": "MIN001",
+      "nome": "F-14 Tomcat Miniatura 1:72",
+      "categoria": "Miniaturas",
+      "preco": 159.00,
+      "custo": 65.00,
+      "margem": 59.1,
+      "estoque": {
+        "sao_jose": 25,
+        "sao_paulo": 30
+      },
+      "imagem": "https://images.unsplash.com/photo-1559128010-7c1ad6e1b6a5?w=400",
+      "marketplace": {
+        "mercado_livre": true,
+        "shopee": true,
+        "tiktok": true
+      },
+      "vendas_mes": 45,
+      "nota": 5.0
+    },
+    {
+      "sku": "MIN002",
+      "nome": "Boeing 747 Air France 1:400",
+      "categoria": "Miniaturas",
+      "preco": 129.00,
+      "custo": 52.00,
+      "margem": 59.7,
+      "estoque": {
+        "sao_jose": 18,
+        "sao_paulo": 22
+      },
+      "imagem": "https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=400",
+      "marketplace": {
+        "mercado_livre": true,
+        "shopee": true,
+        "tiktok": true
+      },
+      "vendas_mes": 38,
+      "nota": 4.9
+    },
+    {
+      "sku": "CAM001",
+      "nome": "Camera IP WiFi 360",
+      "categoria": "Cameras",
+      "preco": 189.00,
+      "custo": 78.00,
+      "margem": 58.7,
+      "estoque": {
+        "sao_jose": 12,
+        "sao_paulo": 15
+      },
+      "imagem": "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=400",
+      "marketplace": {
+        "mercado_livre": true,
+        "shopee": true,
+        "tiktok": false
+      },
+      "vendas_mes": 22,
+      "nota": 4.7
+    },
+    {
+      "sku": "BRQ001",
+      "nome": "Lego Technic Aviao",
+      "categoria": "Brinquedos",
+      "preco": 299.00,
+      "custo": 145.00,
+      "margem": 51.5,
+      "estoque": {
+        "sao_jose": 8,
+        "sao_paulo": 10
+      },
+      "imagem": "https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=400",
+      "marketplace": {
+        "mercado_livre": true,
+        "shopee": true,
+        "tiktok": true
+      },
+      "vendas_mes": 15,
+      "nota": 5.0
+    },
+    {
+      "sku": "VNT001",
+      "nome": "Ventilador USB Portatil",
+      "categoria": "Eletronicos",
+      "preco": 49.00,
+      "custo": 18.00,
+      "margem": 63.3,
+      "estoque": {
+        "sao_jose": 50,
+        "sao_paulo": 60
+      },
+      "imagem": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400",
+      "marketplace": {
+        "mercado_livre": true,
+        "shopee": true,
+        "tiktok": true
+      },
+      "vendas_mes": 120,
+      "nota": 4.6
+    },
+    {
+      "sku": "MIN003",
+      "nome": "Miniatura Jetski Yamaha",
+      "categoria": "Miniaturas",
+      "preco": 89.00,
+      "custo": 35.00,
+      "margem": 60.7,
+      "estoque": {
+        "sao_jose": 20,
+        "sao_paulo": 25
+      },
+      "imagem": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400",
+      "marketplace": {
+        "mercado_livre": true,
+        "shopee": true,
+        "tiktok": false
+      },
+      "vendas_mes": 32,
+      "nota": 4.8
+    },
+    {
+      "sku": "DRN003",
+      "nome": "Bateria Extra Drone DJI",
+      "categoria": "Drones",
+      "preco": 199.00,
+      "custo": 85.00,
+      "margem": 57.3,
+      "estoque": {
+        "sao_jose": 10,
+        "sao_paulo": 12
+      },
+      "imagem": "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=400",
+      "marketplace": {
+        "mercado_livre": true,
+        "shopee": true,
+        "tiktok": false
+      },
+      "vendas_mes": 18,
+      "nota": 4.9
+    },
+    {
+      "sku": "CAM002",
+      "nome": "Exaustor Camera Filmagem",
+      "categoria": "Cameras",
+      "preco": 79.00,
+      "custo": 32.00,
+      "margem": 59.5,
+      "estoque": {
+        "sao_jose": 15,
+        "sao_paulo": 18
+      },
+      "imagem": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400",
+      "marketplace": {
+        "mercado_livre": true,
+        "shopee": true,
+        "tiktok": false
+      },
+      "vendas_mes": 25,
+      "nota": 4.7
+    }
+  ]
+}
